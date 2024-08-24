@@ -7,7 +7,7 @@ export default function PersonalInfo() {
 	const [loaded, setLoaded] = useState(false);
 
 	useEffect(() => {
-		const timer = setTimeout(() => setLoaded(true), 1500);
+		const timer = setTimeout(() => setLoaded(true), 500);
 		return () => clearTimeout(timer);
 	}, []);
 
@@ -15,7 +15,7 @@ export default function PersonalInfo() {
 		<div className="bg-gray-800 p-4 rounded-lg space-y-4">
 			{["location", "age", "occupation"].map((item) => (
 				<div key={item} className="flex items-center">
-					<div className="flex items-center w-6 h-6 mr-2 transition-opacity duration-500">
+					<div className="flex items-center w-6 h-6 mr-2 transition-all duration-500">
 						{!loaded && <div className="w-6 h-6 skeleton rounded-full"></div>}
 						{loaded && item === "location" && <MapPin size={18} />}
 						{loaded && item === "age" && <Calendar size={18} />}
