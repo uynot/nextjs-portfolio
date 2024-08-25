@@ -14,8 +14,8 @@ export default function PersonalInfo() {
 	return (
 		<div className="bg-gray-800 p-4 rounded-lg space-y-4">
 			{["location", "age", "occupation"].map((item) => (
-				<div key={item} className="flex items-center">
-					<div className="flex items-center w-6 h-6 mr-2 transition-all duration-500">
+				<div key={item} className="flex items-center justify-center">
+					<div className="flex items-center justify-center w-6 h-6 mr-2 transition-all duration-500">
 						{!loaded && <div className="w-6 h-6 skeleton rounded-full"></div>}
 						{loaded && item === "location" && <MapPin size={18} />}
 						{loaded && item === "age" && <Calendar size={18} />}

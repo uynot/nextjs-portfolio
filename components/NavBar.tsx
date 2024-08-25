@@ -19,20 +19,22 @@ export default function NavBar() {
 	];
 
 	return (
-		<nav className="bg-gray-800 p-4 rounded-lg space-y-4">
-			{navItems.map((item, index) => (
-				<div key={index} className="flex items-center">
-					<div className="flex items-center w-6 h-6 mr-2 transition-all duration-500">
-						{!loaded && <div className="w-6 h-6 skeleton rounded-full"></div>}
-						{loaded && <item.icon size={18} />}
-					</div>
-					<div className="flex-grow">
-						<div className={`h-6 ${!loaded ? "skeleton w-full" : ""} transition-all duration-500`}>
-							{loaded && <span>{item.text}</span>}
+		<nav className="bg-gray-800 p-4 rounded-lg flex flex-col h-full">
+			<div className="space-y-6">
+				{navItems.map((item, index) => (
+					<div key={index} className="flex items-center">
+						<div className="flex items-center justify-center w-6 h-6 mr-2 transition-all duration-500">
+							{!loaded && <div className="w-6 h-6 skeleton rounded-full"></div>}
+							{loaded && <item.icon size={18} />}
+						</div>
+						<div className="flex-grow">
+							<div className={`h-6 ${!loaded ? "skeleton w-20" : ""} transition-all duration-500 flex items-center`}>
+								{loaded && <span>{item.text}</span>}
+							</div>
 						</div>
 					</div>
-				</div>
-			))}
+				))}
+			</div>
 		</nav>
 	);
 }
