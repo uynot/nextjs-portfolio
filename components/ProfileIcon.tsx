@@ -18,8 +18,7 @@ function useImageLoading(src: string) {
 }
 
 export default function ProfileIcon() {
-	const imageSrc = "/icon.jpeg";
-	//const imageSrc = "/taikocry.png";
+	const imageSrc = "/avatar/icon_square.jpg";
 	const loading = useImageLoading(imageSrc);
 	const [show, setShow] = useState(false);
 
@@ -31,15 +30,12 @@ export default function ProfileIcon() {
 	}, [loading]);
 
 	return (
-		<div className="relative w-32 h-32">
+		<div className="relative w-36 h-24 rounded-2xl overflow-hidden bg-gray-700">
 			<div
-				className={`skeleton w-32 h-32 rounded-full absolute transition-opacity duration-500 ease-in-out ${
+				className={`skeleton w-full h-full absolute transition-opacity duration-500 ease-in-out ${
 					show ? "opacity-0" : "opacity-100"
 				}`}></div>
-			<div
-				className={`w-32 h-32 rounded-full overflow-hidden absolute transition-opacity duration-500 ease-in-out ${
-					show ? "opacity-100" : "opacity-0"
-				}`}>
+			<div className={`w-full h-full absolute transition-opacity duration-500 ease-in-out ${show ? "opacity-100" : "opacity-0"}`}>
 				<Image src={imageSrc} alt="Profile Icon" layout="fill" objectFit="cover" />
 			</div>
 		</div>

@@ -15,20 +15,25 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={`${inter.className} bg-gray-900 text-white`}>
-				<div className="min-h-screen p-4 grid grid-cols-12 gap-4 ">
+			<body className={`${inter.className} bg-zinc-900 text-white`}>
+				<div className="min-h-screen p-6 grid grid-cols-12 gap-6 custom-scrollbar overflow-y-scroll h-64 p-4">
 					{/* Left column */}
-					<div className="col-span-3 space-y-4">
-						<div className="flex justify-center">
-							<ProfileIcon />
-						</div>
-						<div className="rounded-lg bg-gray-800 p-1">
-							<PersonalInfo />
+					<div className="col-span-3 space-y-6">
+						<div className="bg-zinc-800 p-6 rounded-2xl">
+							<div className="flex flex-col items-center space-y-4">
+								<ProfileIcon />
+								<h1 className="text-2xl font-bold mt-4 text-white">Seymour Chan</h1>
+								<p className="text-white text-sm bg-zinc-700 rounded-lg p-1 w-11/12 transform flex justify-center">Full-Stack Developer </p>
+							</div>
+							<hr className="w-full mx-auto border-t-2 border-zinc-700 my-5" />
+							<div className="mt-6">
+								<PersonalInfo />
+							</div>
 						</div>
 					</div>
 
 					{/* Middle column */}
-					<div className="col-span-7 rounded-lg bg-gray-800 p-4">{children}</div>
+					<div className="col-span-7 rounded-2xl bg-zinc-800 p-6">{children}</div>
 
 					{/* Right column */}
 					<div className="col-span-2">
