@@ -18,7 +18,8 @@ function useImageLoading(src: string) {
 }
 
 export default function ProfileIcon() {
-	const imageSrc = "/icon.jfif";
+	const imageSrc = "/icon.jpeg";
+	//const imageSrc = "/taikocry.png";
 	const loading = useImageLoading(imageSrc);
 	const [show, setShow] = useState(false);
 
