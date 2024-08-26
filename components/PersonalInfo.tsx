@@ -23,7 +23,7 @@ export default function PersonalInfo() {
 		<div className="space-y-3 text-bold">
 			{items.map((item, index) => (
 				<div key={index} className="flex items-center">
-					<div className="flex items-center justify-center w-8 h-8 mr-3 bg-gray-700 p-2 rounded-lg transition-all duration-500">
+					<div className="flex items-center justify-center w-8 h-8 mr-3 bg-zinc-700 p-2 rounded-lg transition-all duration-500">
 						<item.Icon size={16} className="text-yellow-500" />
 					</div>
 					<div className="flex-grow">
@@ -33,7 +33,7 @@ export default function PersonalInfo() {
 									href={item.text}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-white hover:text-yellow-400 transition-colors duration-300">
+									className="text-white hover:text-yellow-400 transition-colors duration-300 select-none">
 									{item.label}
 								</a>
 							) : (

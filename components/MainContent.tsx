@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { ExternalLink } from "lucide-react";
 
 export default function MainContent() {
 	const [loaded, setLoaded] = useState(false);
@@ -16,16 +17,19 @@ export default function MainContent() {
 			title: "Nerd",
 			category: "OhniPixel",
 			imageUrl: "/project thumbnails/1.gif",
+			link: "https://example.com/nerd",
 		},
 		{
 			title: "Sunglass Negus",
 			category: "Bro doesn't need shampoo",
 			imageUrl: "/project thumbnails/5.jpg",
+			link: "https://example.com/sunglass-negus",
 		},
 		{
 			title: "Fundo",
 			category: "Web Design",
 			imageUrl: "/project thumbnails/3.png",
+			link: "https://example.com/fundo",
 		},
 		// Add more items as needed
 	];
@@ -35,7 +39,7 @@ export default function MainContent() {
 	const filteredItems = selectedCategory === "All" ? portfolioItems : portfolioItems.filter((item) => item.category === selectedCategory);
 
 	return (
-		<div className="space-y-8">
+		<div className="space-y-8 select-none">
 			<section>
 				<h2 className="text-3xl font-bold mb-6 text-white">Portfolio</h2>
 
@@ -64,12 +68,24 @@ export default function MainContent() {
 				<div className="grid grid-cols-2 gap-6">
 					{filteredItems.map((item, index) => (
 						<div key={index} className="bg-zinc-800 rounded-lg p-4 transition-all duration-300">
-							<div className="w-full h-40 bg-gray-700 rounded-md mb-4 overflow-hidden">
-								<img
-									src={item.imageUrl}
-									alt={item.title}
-									className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-								/>
+							<div className="relative w-full h-40 rounded-md mb-4 overflow-hidden">
+								{!loaded && <div className="w-full h-full skeleton"></div>}
+								{loaded && (
+									<>
+										<img
+											src={item.imageUrl}
+											alt={item.title}
+											className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+										/>
+										<a
+											href={item.link}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
+											<ExternalLink size={24} className="text-white" />
+										</a>
+									</>
+								)}
 							</div>
 							<h3 className="text-xl font-semibold text-white">{item.title}</h3>
 							<p className="text-sm text-gray-400">{item.category}</p>

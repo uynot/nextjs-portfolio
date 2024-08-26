@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					{/* Left column */}
 					<div className="col-span-3 space-y-6">
 						<div className="bg-zinc-800 p-6 rounded-2xl">
-							<div className="flex flex-col items-center space-y-4">
+							<div className="flex flex-col items-center space-y-4 select-none">
 								<ProfileIcon />
 								<h1 className="text-2xl font-bold mt-4 text-white">Seymour Chan</h1>
 								<p className="text-white text-sm bg-zinc-700 rounded-lg p-1 w-11/12 transform flex justify-center">Full-Stack Developer </p>
