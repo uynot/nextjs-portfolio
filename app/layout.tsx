@@ -9,14 +9,14 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Your Portfolio",
-	description: "A showcase of my work and skills",
+	description: "Peronal Portfolio with Next.js and Tailwind CSS",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
 			<body className={`${inter.className} bg-zinc-900 text-white`}>
-				<div className="min-h-screen p-6 grid grid-cols-12 gap-6 custom-scrollbar overflow-y-scroll h-64 p-4">
+				<div className="min-h-screen p-6 grid grid-cols-12 gap-6 custom-scrollbar overflow-y-scroll h-64">
 					{/* Left column */}
 					<div className="col-span-3 space-y-6">
 						<div className="bg-zinc-800 p-6 rounded-2xl">
