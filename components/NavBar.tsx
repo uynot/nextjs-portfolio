@@ -14,12 +14,12 @@ export default function NavBar() {
 	];
 
 	return (
-		<nav className="bg-zinc-800 p-4 rounded-lg flex flex-col h-auto select-none">
-			<div className="space-y-4">
+		<nav className="bg-zinc-800 p-3 rounded-lg flex flex-col h-auto select-none">
+			<div className="space-y-1">
 				{navItems.map((item, index) => (
 					<div
 						key={index}
-						className={`flex items-center p-2 rounded-lg transition-all duration-500 cursor-pointer ${
+						className={`flex items-center p-1 rounded-lg transition-all duration-500 cursor-pointer ${
 							activeSection === item.text ? "bg-yellow-500" : "bg-zinc-800"
 						}`}
 						onClick={() => setActiveSection(item.text)}>
