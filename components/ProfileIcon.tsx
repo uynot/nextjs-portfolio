@@ -18,7 +18,8 @@ function useImageLoading(src: string) {
 }
 
 export default function ProfileIcon() {
-	const imageSrc = "/avatar/icon_square.jpg";
+	//const imageSrc = "/avatar/icon_square.jpg";
+	const imageSrc = "/avatar/icon_square_cropped.jpg";
 	const loading = useImageLoading(imageSrc);
 	const [show, setShow] = useState(false);
 
@@ -30,7 +31,7 @@ export default function ProfileIcon() {
 	}, [loading]);
 
 	return (
-		<div className="relative w-36 h-24 rounded-2xl overflow-hidden bg-gray-700">
+		<div className="relative w-48 h-32 rounded-2xl overflow-hidden bg-gray-700">
 			<div
 				className={`skeleton w-full h-full absolute transition-opacity duration-500 ease-in-out ${
 					show ? "opacity-0" : "opacity-100"

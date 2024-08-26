@@ -77,13 +77,6 @@ export default function MainContent() {
 											alt={item.title}
 											className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
 										/>
-										<a
-											href={item.link}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50">
-											<ExternalLink size={24} className="text-white" />
-										</a>
 									</>
 								)}
 							</div>
