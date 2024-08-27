@@ -1,34 +1,43 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { MapPin, Calendar, Briefcase } from "lucide-react";
+import { MapPin, Mail, Phone, Linkedin, Github } from "lucide-react";
 
 export default function PersonalInfo() {
-	const [loaded, setLoaded] = useState(false);
-
-	useEffect(() => {
-		const timer = setTimeout(() => setLoaded(true), 500);
-		return () => clearTimeout(timer);
-	}, []);
+	const items = [
+		{ Icon: MapPin, text: "Toronto, ON, Canada" },
+		{ Icon: Mail, text: "kaho399@gmail.com" },
+		{ Icon: Phone, text: "+1 (437) 669-6420" },
+		{
+			Icon: Linkedin,
+			text: "https://www.linkedin.com/in/seymour-chan-971041194/",
+			label: "LinkedIn",
+		},
+		{
+			Icon: Github,
+			text: "https://github.com/uynot",
+			label: "GitHub",
+		},
+	];
 
 	return (
-		<div className="bg-gray-800 p-4 rounded-lg space-y-4">
-			{["location", "age", "occupation"].map((item) => (
-				<div key={item} className="flex items-center justify-center">
-					<div className="flex items-center justify-center w-6 h-6 mr-2 transition-all duration-500">
-						{!loaded && <div className="w-6 h-6 skeleton rounded-full"></div>}
-						{loaded && item === "location" && <MapPin size={18} />}
-						{loaded && item === "age" && <Calendar size={18} />}
-						{loaded && item === "occupation" && <Briefcase size={18} />}
+		<div className="space-y-3 text-bold">
+			{items.map((item, index) => (
+				<div key={index} className="flex items-center">
+					<div className="flex items-center justify-center w-8 h-8 mr-3 bg-zinc-700 p-2 rounded-lg transition-all duration-500">
+						<item.Icon size={16} className="text-yellow-500" />
 					</div>
 					<div className="flex-grow">
-						<div className={`h-6 ${!loaded ? "skeleton w-full" : ""} transition-all duration-500`}>
-							{loaded && (
-								<span>
-									{item === "location" && "Toronto, Canada"}
-									{item === "age" && "90s"}
-									{item === "occupation" && "Backend Developer"}
-								</span>
+						<div className="h-5 transition-all duration-500">
+							{item.label ? (
+								<a
+									href={item.text}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-white hover:text-yellow-400 transition-colors duration-300 select-none">
+									{item.label}
+								</a>
+							) : (
+								<span className="text-white">{item.text}</span>
 							)}
 						</div>
 					</div>
@@ -37,4 +46,3 @@ export default function PersonalInfo() {
 		</div>
 	);
 }
-//test
