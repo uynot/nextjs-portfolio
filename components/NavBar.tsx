@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { Home, User, Briefcase, BookOpen, Mail } from "lucide-react";
+import { Briefcase, User, BookOpen, Mail } from "lucide-react";
+import { useActiveSection } from "../contexts/ActiveSectionContext";
 
 export default function NavBar() {
-	const [activeSection, setActiveSection] = useState("Portfolio");
+	const { activeSection, setActiveSection } = useActiveSection();
 
 	const navItems = [
 		{ icon: Briefcase, text: "Portfolio" },
