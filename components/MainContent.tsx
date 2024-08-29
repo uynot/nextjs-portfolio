@@ -16,24 +16,38 @@ export default function MainContent() {
 
 	const portfolioItems = [
 		{
-			title: "Nerd",
-			category: "OhniPixel",
+			title: "Personal Portfolio",
+			category: "Static Website",
 			imageUrl: "/project thumbnails/1.gif",
-			link: "https://example.com/nerd",
+			link: "https://google.com/",
 		},
 		{
-			title: "Sunglass Negus",
-			category: "Bro doesn't need shampoo",
+			title: "Mahjong Calculator",
+			category: "Static Website",
+			imageUrl: "/project thumbnails/taikocry.png",
+			link: "https://google.com/",
+		},
+		{
+			title: "API Endpoint Project",
+			category: "Backend",
 			imageUrl: "/project thumbnails/5.jpg",
-			link: "https://example.com/sunglass-negus",
+			link: "https://google.com/",
 		},
 		{
-			title: "Fundo",
-			category: "Web Design",
+			title: "Clinic Management System",
+			category: "Full-Stack Application",
 			imageUrl: "/project thumbnails/3.png",
-			link: "https://example.com/fundo",
+			link: "https://google.com/",
 		},
-		// Add more items as needed
+	];
+
+	const skills = [
+		{ name: "JavaScript", level: 90 },
+		{ name: "React", level: 85 },
+		{ name: "Node.js", level: 80 },
+		{ name: "TypeScript", level: 75 },
+		{ name: "HTML/CSS", level: 95 },
+		{ name: "Python", level: 70 },
 	];
 
 	const categories = ["All", ...Array.from(new Set(portfolioItems.map((item) => item.category)))];
@@ -46,7 +60,7 @@ export default function MainContent() {
 
 			{/* Filter Section */}
 			<div className="relative mb-6">
-				<div className="flex space-x-4 text-lg relative">
+				<div className="flex space-x-4 text-md relative">
 					{categories.map((category) => (
 						<button
 							key={category}
@@ -93,6 +107,25 @@ export default function MainContent() {
 		</section>
 	);
 
+	const renderSkills = () => (
+		<section>
+			<h2 className="text-3xl font-bold mb-6 text-white">Skills</h2>
+			<div className="space-y-4">
+				{skills.map((skill, index) => (
+					<div key={index}>
+						<div className="flex justify-between mb-1">
+							<span className="text-base font-medium text-white">{skill.name}</span>
+							<span className="text-sm font-medium text-white">{skill.level}%</span>
+						</div>
+						<div className="w-full bg-gray-700 rounded-full h-2.5">
+							<div className="bg-yellow-500 h-2.5 rounded-full" style={{ width: `${skill.level}%` }}></div>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+	);
+
 	const renderBlog = () => (
 		<section>
 			<h2 className="text-3xl font-bold mb-6 text-white">Blog</h2>
@@ -111,6 +144,7 @@ export default function MainContent() {
 		<div className="space-y-8 select-none">
 			{activeSection === "Portfolio" && renderPortfolio()}
 			{activeSection === "Experience" && renderExperience()}
+			{activeSection === "Skills" && renderSkills()}
 			{activeSection === "Blog" && renderBlog()}
 			{activeSection === "Contact" && renderContact()}
 		</div>

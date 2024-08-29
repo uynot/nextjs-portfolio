@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, User, BookOpen, Mail } from "lucide-react";
+import { Briefcase, User, BookOpen, Mail, Code } from "lucide-react";
 import { useActiveSection } from "../contexts/ActiveSectionContext";
 
 export default function NavBar() {
@@ -9,6 +9,7 @@ export default function NavBar() {
 	const navItems = [
 		{ icon: Briefcase, text: "Portfolio" },
 		{ icon: User, text: "Experience" },
+		{ icon: Code, text: "Skills" },
 		{ icon: BookOpen, text: "Blog" },
 		{ icon: Mail, text: "Contact" },
 	];
