@@ -16,9 +16,15 @@ export default function MainContent() {
 
 	const portfolioItems = [
 		{
-			title: "Personal Portfolio",
-			category: "Static Website",
-			imageUrl: "/project thumbnails/1.gif",
+			title: "Clinic Management System",
+			category: "Full-Stack Application",
+			imageUrl: "/project thumbnails/3.png",
+			link: "https://google.com/",
+		},
+		{
+			title: "Inventory CRUD API with MySQL",
+			category: "Backend Application",
+			imageUrl: "/project thumbnails/5.jpg",
 			link: "https://google.com/",
 		},
 		{
@@ -28,15 +34,9 @@ export default function MainContent() {
 			link: "https://google.com/",
 		},
 		{
-			title: "API Endpoint Project",
-			category: "Backend",
-			imageUrl: "/project thumbnails/5.jpg",
-			link: "https://google.com/",
-		},
-		{
-			title: "Clinic Management System",
-			category: "Full-Stack Application",
-			imageUrl: "/project thumbnails/3.png",
+			title: "Personal Portfolio",
+			category: "Static Website",
+			imageUrl: "/project thumbnails/1.gif",
 			link: "https://google.com/",
 		},
 	];
