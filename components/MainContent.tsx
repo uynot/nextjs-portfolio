@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { ExternalLink } from "lucide-react";
+import { Briefcase, GraduationCap } from "lucide-react";
 import { useActiveSection } from "../contexts/ActiveSectionContext";
 
 export default function MainContent() {
@@ -16,9 +17,15 @@ export default function MainContent() {
 
 	const portfolioItems = [
 		{
-			title: "Personal Portfolio",
-			category: "Static Website",
-			imageUrl: "/project thumbnails/1.gif",
+			title: "Clinic Management System",
+			category: "Full-Stack Application",
+			imageUrl: "/project thumbnails/3.png",
+			link: "https://google.com/",
+		},
+		{
+			title: "Inventory CRUD API with MySQL",
+			category: "Backend Application",
+			imageUrl: "/project thumbnails/5.jpg",
 			link: "https://google.com/",
 		},
 		{
@@ -28,17 +35,43 @@ export default function MainContent() {
 			link: "https://google.com/",
 		},
 		{
-			title: "API Endpoint Project",
-			category: "Backend",
-			imageUrl: "/project thumbnails/5.jpg",
+			title: "Personal Portfolio",
+			category: "Static Website",
+			imageUrl: "/project thumbnails/1.gif",
 			link: "https://google.com/",
+		},
+	];
+
+	const experiences = [
+		{
+			title: "Senior Software Engineer",
+			company: "Tech Giants Inc.",
+			period: "2021 - Present",
+			description: "Led development of scalable web applications using React and Node.js.",
+			type: "work",
 		},
 		{
-			title: "Clinic Management System",
-			category: "Full-Stack Application",
-			imageUrl: "/project thumbnails/3.png",
-			link: "https://google.com/",
+			title: "Master's in Computer Science",
+			company: "University of Technology",
+			period: "2019 - 2021",
+			description: "Specialized in Artificial Intelligence and Machine Learning.",
+			type: "education",
 		},
+		{
+			title: "Software Developer",
+			company: "Innovative Startups Ltd.",
+			period: "2017 - 2021",
+			description: "Developed and maintained full-stack applications for various clients.",
+			type: "work",
+		},
+		{
+			title: "Bachelor's in Software Engineering",
+			company: "Tech State University",
+			period: "2013 - 2017",
+			description: "Graduated with honors. Focused on web technologies and algorithms.",
+			type: "education",
+		},
+		// Add more experiences as needed
 	];
 
 	const skills = [
@@ -101,9 +134,32 @@ export default function MainContent() {
 	);
 
 	const renderExperience = () => (
-		<section>
-			<h2 className="text-3xl font-bold mb-6 text-white">Experience</h2>
-			{/* Add your experience content here */}
+		<section className="py-5">
+			<h2 className="text-3xl font-bold mb-10 text-white">Experience</h2>
+			<div className="relative">
+				{/* Vertical line */}
+				<div className="absolute left-5 top-5 bottom-0 w-1 bg-gradient-to-b from-white to-transparent"></div>
+
+				{experiences.map((exp, index) => (
+					<div key={index} className="mb-6 flex">
+						<div className="flex flex-col items-center mt-3 mr-4">
+							<div
+								className={`rounded-full h-11 w-11 flex items-center justify-center z-10 ${
+									exp.type === "work" ? "bg-yellow-500" : "bg-blue-400"
+								}`}>
+								{exp.type === "work" ? <Briefcase size={20} /> : <GraduationCap size={20} />}
+							</div>
+							{/* {index !== experiences.length && <div className="h-full w-0.5 bg-yellow-700"></div>} */}
+						</div>
+						<div className="bg-zinc-700 p-4 rounded-lg shadow-md shadow-zinc-600 flex-grow">
+							<h3 className="text-xl font-bold text-white">{exp.title}</h3>
+							<p className="text-yellow-500">{exp.company}</p>
+							<p className="text-gray-400 text-sm">{exp.period}</p>
+							<p className="mt-2 text-gray-300">{exp.description}</p>
+						</div>
+					</div>
+				))}
+			</div>
 		</section>
 	);
 
