@@ -144,9 +144,9 @@ export default function MainContent() {
 					<div key={index} className="mb-6 flex">
 						<div className="flex flex-col items-center mt-3 mr-4">
 							<div
-								className={`rounded-full h-11 w-11 flex items-center justify-center z-10 ${
-									exp.type === "work" ? "bg-yellow-500" : "bg-zinc-600"
-								}`}>
+								className={`rounded-full h-11 w-11 flex items-center justify-center z-10 
+									${exp.type === "work" ? "bg-yellow-500" : "bg-yellow-500"}
+								`}>
 								{exp.type === "work" ? <Briefcase size={20} /> : <GraduationCap size={20} />}
 							</div>
 							{/* {index !== experiences.length && <div className="h-full w-0.5 bg-yellow-700"></div>} */}
