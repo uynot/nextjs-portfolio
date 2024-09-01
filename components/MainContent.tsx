@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink } from "lucide-react";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { ExternalLink, Briefcase, GraduationCap } from "lucide-react";
 import { useActiveSection } from "../contexts/ActiveSectionContext";
 
 export default function MainContent() {
@@ -44,34 +43,40 @@ export default function MainContent() {
 
 	const experiences = [
 		{
-			title: "Senior Software Engineer",
-			company: "Tech Giants Inc.",
-			period: "2021 - Present",
-			description: "Led development of scalable web applications using React and Node.js.",
+			title: "Creative Director",
+			company: "Design Studio Inc.",
+			period: "2015 - Present",
+			description: "Led creative teams in developing innovative design solutions for various clients.",
 			type: "work",
 		},
 		{
-			title: "Master's in Computer Science",
-			company: "University of Technology",
-			period: "2019 - 2021",
-			description: "Specialized in Artificial Intelligence and Machine Learning.",
-			type: "education",
-		},
-		{
-			title: "Software Developer",
-			company: "Innovative Startups Ltd.",
-			period: "2017 - 2021",
-			description: "Developed and maintained full-stack applications for various clients.",
+			title: "Art Director",
+			company: "Creative Agency Ltd.",
+			period: "2010 - 2015",
+			description: "Managed visual aspects of marketing campaigns and brand identities.",
 			type: "work",
 		},
+	];
+
+	const education = [
 		{
-			title: "Bachelor's in Software Engineering",
-			company: "Tech State University",
-			period: "2013 - 2017",
-			description: "Graduated with honors. Focused on web technologies and algorithms.",
-			type: "education",
+			title: "University School Of The Arts",
+			degree: "Master of Fine Arts",
+			period: "2007 - 2009",
+			description: "Specialized in graphic design and digital media.",
 		},
-		// Add more experiences as needed
+		{
+			title: "New York Academy of Art",
+			degree: "Bachelor of Fine Arts",
+			period: "2004 - 2007",
+			description: "Focused on traditional art techniques and contemporary design practices.",
+		},
+		{
+			title: "High School Of Art And Design",
+			degree: "High School Diploma",
+			period: "2000 - 2004",
+			description: "Foundations in art and design principles.",
+		},
 	];
 
 	const skills = [
@@ -133,38 +138,52 @@ export default function MainContent() {
 		</section>
 	);
 
-	const renderExperience = () => (
-		<section className="py-5">
-			<h2 className="text-3xl font-bold mb-10 text-white">Experience</h2>
-			<div className="relative">
-				{/* Vertical line */}
-				<div className="absolute left-5 top-5 bottom-0 w-1 bg-gradient-to-b from-white to-transparent"></div>
-
-				{experiences.map((exp, index) => (
-					<div key={index} className="mb-6 flex">
-						<div className="flex flex-col items-center mt-3 mr-4">
-							<div
-								className={`rounded-full h-11 w-11 flex items-center justify-center z-10 
-									${exp.type === "work" ? "bg-yellow-500" : "bg-yellow-500"}
-								`}>
-								{exp.type === "work" ? <Briefcase size={20} /> : <GraduationCap size={20} />}
+	const renderExperienceAndEducation = () => (
+		<section>
+			<h2 className="text-2xl font-bold mb-3 text-white">Experience</h2>
+			<div className="space-y-6">
+				<div className="relative">
+					<div className="mt-1 absolute left-1.5 top-2 bottom-0 w-px bg-gradient-to-b from-zinc-700 via-zinc-700/100 to-zinc-700/25"></div>
+					{experiences.map((exp, index) => (
+						<div key={index} className="mb-8 flex items-start">
+							<div className="relative mr-6">
+								<div className="absolute top-1.5 left-0 w-3 h-3 rounded-full z-20 bg-dot-fade"></div>
+								<div className="absolute top-1.5 left-0 w-3 h-3 rounded-full animate-ping opacity-75 bg-dot-fade"></div>
 							</div>
-							{/* {index !== experiences.length && <div className="h-full w-0.5 bg-yellow-700"></div>} */}
+							<div className="flex-grow pt-[0px]">
+								<h3 className="mb-1 text-base font-bold text-white">{exp.title}</h3>
+								<p className="text-yellow-500 text-xs">{exp.company}</p>
+								<p className="mb-1 text-gray-400 text-xs">{exp.period}</p>
+								<p className="mt-1 text-gray-400 text-sm">{exp.description}</p>
+							</div>
 						</div>
-						<div className="bg-zinc-700 p-4 rounded-lg shadow-md shadow-zinc-600 flex-grow">
-							<h3 className="text-xl font-bold text-white">{exp.title}</h3>
-							<p className="text-yellow-500">{exp.company}</p>
-							<p className="text-gray-400 text-sm">{exp.period}</p>
-							<p className="mt-2 text-gray-300">{exp.description}</p>
+					))}
+				</div>
+			</div>
+			<h2 className="text-2xl font-bold mt-14 mb-3 text-white">Education</h2>
+			<div className="space-y-6">
+				<div className="relative">
+					<div className="mt-1 absolute left-1.5 top-2 bottom-0 w-px bg-gradient-to-b from-zinc-700 via-zinc-700/100 to-zinc-700/25"></div>
+					{education.map((edu, index) => (
+						<div key={index} className="mb-8 flex items-start">
+							<div className="relative mr-6">
+								<div className="absolute top-1.5 left-0 w-3 h-3 rounded-full z-20 bg-dot-fade"></div>
+								<div className="absolute top-1.5 left-0 w-3 h-3 rounded-full animate-ping opacity-75 bg-dot-fade"></div>
+							</div>
+							<div className="flex-grow pt-[0px]">
+								<h3 className="text-base font-bold text-white">{edu.title}</h3>
+								<p className="mb-1 text-yellow-500 text-xs">{edu.period}</p>
+								<p className="mt-1 text-gray-400 text-sm">{edu.description}</p>
+							</div>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
 		</section>
 	);
 
 	const renderSkills = () => (
-		<section>
+		<section className="h-auto">
 			<h2 className="text-3xl font-bold mb-6 text-white">Skills</h2>
 			<div className="space-y-4">
 				{skills.map((skill, index) => (
@@ -199,7 +218,7 @@ export default function MainContent() {
 	return (
 		<div className="space-y-8 select-none">
 			{activeSection === "Portfolio" && renderPortfolio()}
-			{activeSection === "Experience" && renderExperience()}
+			{activeSection === "Experience" && renderExperienceAndEducation()}
 			{activeSection === "Skills" && renderSkills()}
 			{activeSection === "Blog" && renderBlog()}
 			{activeSection === "Contact" && renderContact()}
