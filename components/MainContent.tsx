@@ -43,39 +43,60 @@ export default function MainContent() {
 
 	const experiences = [
 		{
-			title: "Creative Director",
-			company: "Design Studio Inc.",
-			period: "2015 - Present",
-			description: "Led creative teams in developing innovative design solutions for various clients.",
+			title: "Junior Programmer",
+			company: "CIIC Hong Kong Limited",
+			period: "08/2022 - 09/2023",
+			description:
+				"Led the digitization of manual paperwork processes by developing a web app using Java EE, Spring Framework, and MariaDB, enhancing data transfer and system performance. Coordinated multi-team collaborations and optimized SQL queries to boost software efficiency by 80%.",
 			type: "work",
 		},
 		{
-			title: "Art Director",
-			company: "Creative Agency Ltd.",
-			period: "2010 - 2015",
-			description: "Managed visual aspects of marketing campaigns and brand identities.",
+			title: "Technician & Customer Support Representative",
+			company: "Softlink Medical Solution Ltd.",
+			period: "08/2020 - 08/2022",
+			description:
+				"Managed multiple database systems to ensure optimal operation and data security. Provided B2B phone-based customer support, resolving technical issues and reducing system downtime through robust diagnostic processes.",
 			type: "work",
+		},
+		{
+			title: "Software Engineer Trainee",
+			company: "Top Vista Digital Media Solution Ltd.",
+			period: "04/2020 - 08/2020",
+			description:
+				"Collaborated with a cross-functional team to develop a digital signage system using C#, ReactJS, and ASP.NET MVC Framework, enhancing software delivery and increasing project deployment efficiency by 25%.",
+			type: "work",
+		},
+		{
+			title: "Technical Sales Representative",
+			company: "Winbo International Low Voltage Distribution",
+			period: "01/2024 - 05/2024",
+			description:
+				"Improved customer satisfaction and sales process efficiency by managing sales operations from cold calling to invoicing. Enhanced inventory and customer service, boosting in-store experience and operational efficiency.",
+			type: "work",
+		},
+		{
+			title: "Creative Director (Internship)",
+			company: "SyZyGy Ltd.",
+			period: "05/2018 - 07/2018",
+			description:
+				"Engineered a game registration website, boosting user engagement through intuitive site architecture and functional navigation. Utilized Adobe Photoshop and Illustrator for graphic design, enhancing visual appeal and user interaction.",
+			type: "internship",
 		},
 	];
 
 	const education = [
 		{
-			title: "University School Of The Arts",
-			degree: "Master of Fine Arts",
-			period: "2007 - 2009",
-			description: "Specialized in graphic design and digital media.",
+			title: "Diploma of Information Technology",
+			degree: "Diploma",
+			period: "09/2016 - 07/2017",
+			description:
+				"Proficient in SQL, Java, JavaScript, and C#, with hands-on experience in Visual Studio. Skilled in database management and application development.",
 		},
 		{
-			title: "New York Academy of Art",
-			degree: "Bachelor of Fine Arts",
-			period: "2004 - 2007",
-			description: "Focused on traditional art techniques and contemporary design practices.",
-		},
-		{
-			title: "High School Of Art And Design",
-			degree: "High School Diploma",
-			period: "2000 - 2004",
-			description: "Foundations in art and design principles.",
+			title: "Higher Diploma In Multimedia (Withdrew)",
+			degree: "Higher Diploma",
+			period: "09/2017 - 01/2019",
+			description: "Focused on IT and multimedia, including coursework in visual communication, media production, and web and app design.",
 		},
 	];
 
@@ -154,7 +175,7 @@ export default function MainContent() {
 								<h3 className="mb-1 text-base font-bold text-white">{exp.title}</h3>
 								<p className="text-yellow-500 text-xs">{exp.company}</p>
 								<p className="mb-1 text-gray-400 text-xs">{exp.period}</p>
-								<p className="mt-1 text-gray-400 text-sm">{exp.description}</p>
+								<p className="mt-1 text-gray-300 text-sm">{exp.description}</p>
 							</div>
 						</div>
 					))}
@@ -173,7 +194,7 @@ export default function MainContent() {
 							<div className="flex-grow pt-[0px]">
 								<h3 className="text-base font-bold text-white">{edu.title}</h3>
 								<p className="mb-1 text-yellow-500 text-xs">{edu.period}</p>
-								<p className="mt-1 text-gray-400 text-sm">{edu.description}</p>
+								<p className="mt-1 text-gray-300 text-sm">{edu.description}</p>
 							</div>
 						</div>
 					))}
