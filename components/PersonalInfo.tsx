@@ -36,14 +36,14 @@ export default function PersonalInfo() {
 					target="_blank"
 					rel="noopener noreferrer"
 					className="w-8 h-8 flex items-center justify-center bg-zinc-700 rounded-xl transition-all duration-300 hover:bg-yellow-500">
-					<Linkedin size={16} className="text-white" />
+					<Linkedin size={16} className="text-yellow-500" />
 				</a>
 				<a
 					href="https://github.com/uynot"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="w-8 h-8 flex items-center justify-center bg-zinc-700 rounded-xl transition-all duration-300 hover:bg-yellow-500">
-					<Github size={16} className="text-white" />
+					<Github size={16} className="text-yellow-500" />
 				</a>
 			</div>
 		</div>
