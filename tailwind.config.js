@@ -15,6 +15,10 @@ module.exports = {
 			backgroundImage: {
 				"dot-fade": "radial-gradient(circle, rgba(253, 224, 71, 1) 30%, rgba(253, 224, 71, 0) 70%)",
 			},
+			boxShadow: {
+				"inner-shadow-fade":
+					"inset 0 0 10px rgba(63, 63, 70, 0.5), inset 0 0 4px rgba(63, 63, 70, 0.25), inset 0 0 8px rgba(63, 63, 70, 0.1)",
+			},
 		},
 	},
 	plugins: [require("tailwind-scrollbar"), require("daisyui")],

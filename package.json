@@ -11,6 +11,7 @@
 		"watch:css": "postcss app/globals.css -o public/styles.css --watch"
 	},
 	"dependencies": {
+		"@shoelace-style/shoelace": "^2.16.0",
 		"daisyui": "^4.12.10",
 		"lucide-react": "^0.435.0",
 		"next": "latest",

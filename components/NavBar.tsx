@@ -15,7 +15,7 @@ export default function NavBar() {
 	];
 
 	return (
-		<nav className="bg-zinc-800 p-3 rounded-lg flex flex-col h-auto select-none">
+		<nav className="bg-zinc-800 p-3 rounded-lg flex flex-col h-auto select-none  shadow-inner-shadow-fade">
 			<div className="space-y-1">
 				{navItems.map((item, index) => (
 					<div

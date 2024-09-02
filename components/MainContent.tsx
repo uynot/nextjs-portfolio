@@ -84,7 +84,7 @@ export default function MainContent() {
 		},
 	];
 
-	const education = [
+	/*const education = [
 		{
 			title: "Diploma of Information Technology",
 			degree: "Diploma",
@@ -98,7 +98,7 @@ export default function MainContent() {
 			period: "09/2017 - 01/2019",
 			description: "Focused on IT and multimedia, including coursework in visual communication, media production, and web and app design.",
 		},
-	];
+	];*/
 
 	const skills = [
 		{ name: "JavaScript", level: 90 },
@@ -181,6 +181,7 @@ export default function MainContent() {
 					))}
 				</div>
 			</div>
+			{/*
 			<h2 className="text-2xl font-bold mt-14 mb-3 text-white">Education</h2>
 			<div className="space-y-6">
 				<div className="relative">
@@ -200,6 +201,7 @@ export default function MainContent() {
 					))}
 				</div>
 			</div>
+			*/}
 		</section>
 	);
 
