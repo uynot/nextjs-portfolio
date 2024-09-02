@@ -1,4 +1,6 @@
 import "./globals.css";
+import Head from "next/head";
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ProfileIcon from "../components/ProfileIcon";
@@ -16,12 +18,20 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
-			<body className={`${inter.className} bg-zinc-900 text-white`}>
+			<body
+				className={`${inter.className} text-white`}
+				style={{
+					backgroundImage: `
+            repeating-linear-gradient(0deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px),
+            repeating-linear-gradient(90deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px),
+            linear-gradient(90deg, hsl(87, 0%, 9%), hsl(87, 0%, 9%))
+          `,
+				}}>
 				<ActiveSectionProvider>
 					<div className="min-h-screen p-2 sm:p-4 md:p-6 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6">
 						{/* Left column */}
 						<div className="md:col-span-3 space-y-4 md:space-y-6">
-							<div className="bg-zinc-800 p-4 md:p-6 rounded-2xl">
+							<div className="bg-zinc-800 p-4 md:p-6 rounded-2xl shadow-inner-shadow-fade">
 								<div className="flex flex-col items-center space-y-4 select-none">
 									<ProfileIcon />
 									<h1 className="text-xl md:text-2xl font-bold mt-4 text-white text-center">Seymour Chan</h1>
@@ -35,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 						</div>
 
 						{/* Middle column */}
-						<div className="md:col-span-7 rounded-2xl bg-zinc-800 p-4 md:p-6">{children}</div>
+						<div className="md:col-span-7 rounded-2xl bg-zinc-800 p-4 md:p-6 shadow-inner-shadow-fade">{children}</div>
 
 						{/* Right column */}
 						<div className="md:col-span-2">
