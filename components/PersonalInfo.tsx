@@ -35,15 +35,15 @@ export default function PersonalInfo() {
 					href="https://www.linkedin.com/in/seymour-chan-971041194/"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="w-8 h-8 flex items-center justify-center bg-zinc-700 rounded-xl transition-all duration-300 hover:bg-yellow-500">
-					<Linkedin size={16} className="text-yellow-500" />
+					className="w-8 h-8 flex items-center justify-center bg-zinc-700 rounded-xl transition-all duration-300 hover:bg-yellow-500 group">
+					<Linkedin size={16} className="text-yellow-500 group-hover:text-white" />
 				</a>
 				<a
 					href="https://github.com/uynot"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="w-8 h-8 flex items-center justify-center bg-zinc-700 rounded-xl transition-all duration-300 hover:bg-yellow-500">
-					<Github size={16} className="text-yellow-500" />
+					className="w-8 h-8 flex items-center justify-center bg-zinc-700 rounded-xl transition-all duration-300 hover:bg-yellow-500 group">
+					<Github size={16} className="text-yellow-500 group-hover:text-white" />
 				</a>
 			</div>
 		</div>
