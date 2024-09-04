@@ -1,21 +1,21 @@
 "use client";
 
-import { Briefcase, User, BookOpen, Mail, Code } from "lucide-react";
+import { User, Briefcase, Code, Mail, FileJson } from "lucide-react";
 import { useActiveSection } from "../contexts/ActiveSectionContext";
 
 export default function NavBar() {
 	const { activeSection, setActiveSection } = useActiveSection();
 
 	const navItems = [
-		{ icon: Briefcase, text: "Portfolio" },
-		{ icon: User, text: "Experience" },
+		{ icon: User, text: "About" },
+		{ icon: FileJson, text: "Portfolio" },
+		{ icon: Briefcase, text: "Experience" },
 		{ icon: Code, text: "Skills" },
-		{ icon: BookOpen, text: "Blog" },
 		{ icon: Mail, text: "Contact" },
 	];
 
 	return (
-		<nav className="bg-zinc-800 p-3 rounded-lg flex flex-col h-auto select-none  shadow-inner-shadow-fade">
+		<nav className="bg-zinc-800 p-3 rounded-lg flex flex-col h-auto select-none shadow-inner-shadow-fade">
 			<div className="space-y-1">
 				{navItems.map((item, index) => (
 					<div
