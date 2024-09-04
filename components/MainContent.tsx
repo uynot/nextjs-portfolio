@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ExternalLink, Briefcase, GraduationCap } from "lucide-react";
 import { useActiveSection } from "../contexts/ActiveSectionContext";
+import { Code, Globe, Smartphone, Camera, Briefcase, GraduationCap, Award } from "lucide-react";
 
 export default function MainContent() {
 	const [loaded, setLoaded] = useState(false);
@@ -112,6 +112,60 @@ export default function MainContent() {
 	const categories = ["All", ...Array.from(new Set(portfolioItems.map((item) => item.category)))];
 
 	const filteredItems = selectedCategory === "All" ? portfolioItems : portfolioItems.filter((item) => item.category === selectedCategory);
+
+	const renderAbout = () => (
+		<section className="space-y-8">
+			<div>
+				<h2 className="text-3xl font-bold mb-4 text-white">About Me</h2>
+				<p className="text-gray-300 text-lg">
+					I'm Seymour Chan, a Full-Stack Developer from Toronto, Canada. With a passion for creating functional and user-friendly digital
+					experiences, I specialize in web development and innovative software solutions. My goal is to build applications that are not only
+					technically sound but also intuitive and enjoyable to use.
+				</p>
+			</div>
+
+			<div>
+				<h2 className="text-2xl font-bold mb-6 text-white">What I'm Doing</h2>
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+					{[
+						{ icon: Globe, title: "Web Design", description: "Creating responsive and attractive websites that engage users." },
+						{ icon: Code, title: "Web Development", description: "Building robust web applications with modern technologies." },
+						{
+							icon: Smartphone,
+							title: "App Development",
+							description: "Developing cross-platform mobile applications for iOS and Android.",
+						},
+						{ icon: Camera, title: "UI/UX Design", description: "Designing intuitive interfaces for optimal user experience." },
+					].map((item, index) => (
+						<div key={index} className="bg-zinc-700 p-6 rounded-lg flex items-start space-x-4">
+							<item.icon className="text-yellow-500 w-10 h-10 mt-1" />
+							<div>
+								<h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+								<p className="text-gray-300">{item.description}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<div>
+				<h2 className="text-2xl font-bold mb-6 text-white">Achievements</h2>
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+					{[
+						{ icon: Briefcase, title: "5+ Years Experience", description: "In web development and software engineering" },
+						{ icon: GraduationCap, title: "B.Sc. in Computer Science", description: "From University of Toronto" },
+						{ icon: Award, title: "3 Industry Certifications", description: "Including AWS and Google Cloud" },
+					].map((item, index) => (
+						<div key={index} className="bg-zinc-700 p-6 rounded-lg flex flex-col items-center text-center">
+							<item.icon className="text-yellow-500 w-12 h-12 mb-4" />
+							<h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+							<p className="text-gray-300">{item.description}</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 
 	const renderPortfolio = () => (
 		<section>
@@ -240,10 +294,10 @@ export default function MainContent() {
 
 	return (
 		<div className="space-y-8 select-none">
+			{activeSection === "About" && renderAbout()}
 			{activeSection === "Portfolio" && renderPortfolio()}
 			{activeSection === "Experience" && renderExperienceAndEducation()}
 			{activeSection === "Skills" && renderSkills()}
-			{activeSection === "Blog" && renderBlog()}
 			{activeSection === "Contact" && renderContact()}
 		</div>
 	);
