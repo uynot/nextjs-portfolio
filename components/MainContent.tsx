@@ -43,6 +43,13 @@ export default function MainContent() {
 
 	const experiences = [
 		{
+			title: "Release Analyst",
+			company: "CKMax Technology Inc.",
+			period: "09/2024 - Present",
+			description: "I've no idea what to write right now",
+			type: "work",
+		},
+		{
 			title: "Junior Programmer",
 			company: "CIIC Hong Kong Limited",
 			period: "08/2022 - 09/2023",
@@ -192,7 +199,7 @@ export default function MainContent() {
 			</div>
 
 			{/* Portfolio Items */}
-			<div className="grid grid-cols-2 gap-6">
+			<div className="grid grid-cols-3 gap-6">
 				{filteredItems.map((item, index) => (
 					<div key={index} className="bg-zinc-800 rounded-lg p-4 transition-all duration-300">
 						<div className="relative w-full h-40 rounded-md mb-4 overflow-hidden">
