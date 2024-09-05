@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"@shoelace-style/shoelace": "^2.16.0",
+		"@types/google.maps": "^3.57.0",
 		"daisyui": "^4.12.10",
 		"lucide-react": "^0.435.0",
 		"next": "latest",
