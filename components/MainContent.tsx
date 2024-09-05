@@ -285,17 +285,97 @@ export default function MainContent() {
 		</section>
 	);
 
-	const renderBlog = () => (
+	/* const renderBlog = () => (
 		<section>
 			<h2 className="text-3xl font-bold mb-6 text-white">Blog</h2>
-			{/* Add your blog content here */}
+			<div className="space-y-4">Blog Posts</div>
 		</section>
-	);
+	); */
+
+	const [formData, setFormData] = useState({
+		fullName: "",
+		emailAddress: "",
+		message: "",
+	});
+
+	useEffect(() => {
+		const timer = setTimeout(() => setLoaded(true), 500);
+		return () => clearTimeout(timer);
+	}, []);
+
+	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+		const { name, value } = e.target;
+		setFormData((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+	};
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		console.log("Form submitted:", formData);
+		setFormData({ fullName: "", emailAddress: "", message: "" });
+		alert("Message sent successfully!");
+	};
 
 	const renderContact = () => (
-		<section>
+		<section className="space-y-8">
 			<h2 className="text-3xl font-bold mb-6 text-white">Contact</h2>
-			{/* Add your contact form or information here */}
+
+			{/* Google Map with dark theme */}
+			<div className="w-full h-96 rounded-lg overflow-hidden">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184551.80858184468!2d-79.51814294735414!3d43.71840371230804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1684554835455!5m2!1sen!2sca&darkmode=1"
+					width="100%"
+					height="100%"
+					style={{ border: 0 }}
+					allowFullScreen={true}
+					loading="lazy"
+					referrerPolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+
+			{/* Contact Form */}
+			<div>
+				<h3 className="text-2xl font-bold mb-4 text-white">Contact Form</h3>
+				<form onSubmit={handleSubmit} className="space-y-4">
+					<div>
+						<input
+							type="text"
+							name="fullName"
+							value={formData.fullName}
+							onChange={handleInputChange}
+							placeholder="Full name"
+							className="w-full p-2 bg-zinc-700 rounded-md text-white"
+							required
+						/>
+					</div>
+					<div>
+						<input
+							type="email"
+							name="emailAddress"
+							value={formData.emailAddress}
+							onChange={handleInputChange}
+							placeholder="Email address"
+							className="w-full p-2 bg-zinc-700 rounded-md text-white"
+							required
+						/>
+					</div>
+					<div>
+						<textarea
+							name="message"
+							value={formData.message}
+							onChange={handleInputChange}
+							placeholder="Your Message"
+							className="w-full p-2 bg-zinc-700 rounded-md text-white h-32"
+							required></textarea>
+					</div>
+					<div>
+						<button type="submit" className="px-4 py-2 bg-yellow-500 text-black rounded-md hover:bg-yellow-600 transition-colors">
+							Send Message
+						</button>
+					</div>
+				</form>
+			</div>
 		</section>
 	);
 
