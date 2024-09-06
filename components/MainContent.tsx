@@ -338,7 +338,7 @@ export default function MainContent() {
 			<div>
 				<h3 className="text-2xl font-bold mb-4 text-white">Contact Form</h3>
 				<form onSubmit={handleSubmit} className="space-y-4">
-					<div>
+					<div className="flex space-x-4">
 						<input
 							type="text"
 							name="fullName"
@@ -348,8 +348,6 @@ export default function MainContent() {
 							className="w-full p-2 bg-zinc-700 rounded-md text-white"
 							required
 						/>
-					</div>
-					<div>
 						<input
 							type="email"
 							name="emailAddress"
