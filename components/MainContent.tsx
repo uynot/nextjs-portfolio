@@ -135,17 +135,33 @@ export default function MainContent() {
 				<h2 className="text-2xl font-bold mb-6 text-white">What I'm Doing</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 					{[
-						{ icon: Globe, title: "Web Design", description: "Creating responsive and attractive websites that engage users." },
-						{ icon: Code, title: "Web Development", description: "Building robust web applications with modern technologies." },
 						{
-							icon: Smartphone,
-							title: "App Development",
-							description: "Developing cross-platform mobile applications for iOS and Android.",
+							icon: Code,
+							title: "Full-Stack Development",
+							description:
+								"Developing and maintaining web applications using Java EE, Spring Framework, and MariaDB, ensuring high performance and scalability.",
 						},
-						{ icon: Camera, title: "UI/UX Design", description: "Designing intuitive interfaces for optimal user experience." },
+						{
+							icon: Globe,
+							title: "Backend Engineering",
+							description:
+								"Building and optimizing backend systems with a focus on SQL databases, API development, and system performance.",
+						},
+						{
+							icon: Briefcase,
+							title: "Cross-functional Collaboration",
+							description:
+								"Coordinating with cross-functional teams to deliver projects on time, ensuring seamless integration and deployment across all platforms.",
+						},
+						{
+							icon: Award,
+							title: "Technical Support & Troubleshooting",
+							description:
+								"Providing technical support and resolving issues for B2B clients, enhancing operational efficiency and minimizing downtime.",
+						},
 					].map((item, index) => (
 						<div key={index} className="bg-zinc-700 p-6 rounded-lg flex items-start space-x-4">
-							<item.icon className="text-yellow-500 w-5 h-5 mt-1" />
+							<item.icon className="text-yellow-500 w-10 h-25 mt-1" />
 							<div>
 								<h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
 								<p className="text-gray-300">{item.description}</p>
