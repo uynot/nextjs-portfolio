@@ -145,7 +145,7 @@ export default function MainContent() {
 						{ icon: Camera, title: "UI/UX Design", description: "Designing intuitive interfaces for optimal user experience." },
 					].map((item, index) => (
 						<div key={index} className="bg-zinc-700 p-6 rounded-lg flex items-start space-x-4">
-							<item.icon className="text-yellow-500 w-10 h-10 mt-1" />
+							<item.icon className="text-yellow-500 w-5 h-5 mt-1" />
 							<div>
 								<h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
 								<p className="text-gray-300">{item.description}</p>
