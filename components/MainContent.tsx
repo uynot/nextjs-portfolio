@@ -46,7 +46,7 @@ export default function MainContent() {
 			title: "Release Analyst",
 			company: "CKMax Technology Inc.",
 			period: "09/2024 - Present",
-			description: "To be continue......",
+			description: "To be continue...",
 			type: "work",
 		},
 		{
